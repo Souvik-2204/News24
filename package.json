@@ -1,0 +1,29 @@
+{
+  "name": "vanguard-news-platform",
+  "version": "1.0.0",
+  "description": "Full-Stack Digital News Publishing & Subscription Platform - Vanguard 24 News Network",
+  "scripts": {
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm run install:server && npm run install:client",
+    "db:push": "cd server && npx prisma db push",
+    "db:seed": "cd server && node prisma/seed.js",
+    "db:setup": "cd server && node scripts/setup-db.js",
+    "build": "cd client && npm run build",
+    "test": "cd server && node scripts/test-runner.js",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev"
+  },
+  "keywords": [
+    "news",
+    "publishing",
+    "subscription",
+    "razorpay",
+    "prisma",
+    "express",
+    "react",
+    "tailwind"
+  ],
+  "author": "Vanguard News Network",
+  "license": "ISC"
+}
