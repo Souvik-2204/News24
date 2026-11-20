@@ -1,20 +1,42 @@
 {
-  "name": "vanguard-news-platform",
+  "name": "news24-platform",
   "version": "1.0.0",
-  "description": "Full-Stack Digital News Publishing & Subscription Platform - Vanguard 24 News Network",
+  "description": "Full-Stack Digital News Publishing & Subscription Platform - NEWS24 Network",
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
+    "prepare:db": "node scripts/prepare-db.js",
+    "db:generate": "npm run prepare:db && cd server && npx prisma generate",
+    "db:push": "npm run prepare:db && cd server && npx prisma db push",
+    "db:seed": "cd server && node prisma/seed.js",
+    "build:client": "cd client && npm run build",
+    "build": "npm run build:client",
+    "vercel-build": "npm run db:generate && npm run build:client",
     "install:server": "cd server && npm install",
     "install:client": "cd client && npm install",
-    "install:all": "npm run install:server && npm run install:client",
-    "db:push": "cd server && npx prisma db push",
-    "db:seed": "cd server && node prisma/seed.js",
-    "db:setup": "cd server && node scripts/setup-db.js",
-    "build": "cd client && npm run build",
-    "test": "cd server && node scripts/test-runner.js",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm run dev"
+    "install:all": "npm install",
+    "dev:server": "cd server && node src/index.js",
+    "dev:client": "cd client && npm run dev",
+    "dev": "npm run dev:client",
+    "test": "cd server && node scripts/test-all-workflows.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "razorpay": "^2.9.5"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
   },
   "keywords": [
+    "news24",
     "news",
     "publishing",
     "subscription",
@@ -24,6 +46,6 @@
     "react",
     "tailwind"
   ],
-  "author": "Vanguard News Network",
+  "author": "NEWS24 Network",
   "license": "ISC"
 }
