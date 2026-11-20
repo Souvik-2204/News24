@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# NEWS24 NEWS NETWORK
 ### Full-Stack Digital News Publishing & Subscription Platform
 
@@ -221,3 +222,6 @@ The setup script detects `postgresql://`, switches Prisma to `schema.postgresql.
 - HMAC-SHA256 signature verification for Razorpay payments and webhooks.
 - Anti-tampering Maker-Checker validation preventing self-approvals.
 
+=======
+# News24
+>>>>>>> 693eef4bc69148d44c4b9637c04ba70ededecc18
